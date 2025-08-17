@@ -1,16 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Demo</title>
-</head>
-<body>
 
-    <h1>Welcome to our website!</h1>
-    <p>Feel free to chat with our assistant by clicking the icon in the corner.</p>
+<!-- In your <head> tag -->
+<script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
+<style>
+  #webchat .bpWebchat {
+    position: unset;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
 
-    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
-    <script src="https://files.bpcontent.cloud/2025/08/05/00/20250805005701-KV62E16N.js" defer></script>
-    </body>
-</html>
+  #webchat .bpFab {
+    display: none;
+  }
+</style>
+
+<!-- Put this on your page BEFORE the script below -->
+<div id="webchat" style="width: 500px; height: 500px;"></div>
+
+<!-- In your <body> tag -->
+<script>
+  window.botpress.on("webchat:ready", () => {
+    window.botpress.open();
+  });
+  window.botpress.init({
+  "botId": "e8446a63-ea82-4165-8741-1738d0f02a9f",
+  "configuration": {
+    "version": "v1",
+    "botName": "Sea Dog",
+    "botAvatar": "https://files.bpcontent.cloud/2025/08/10/12/20250810121153-04J6COI9.png",
+    "botDescription": "",
+    "website": {},
+    "email": {},
+    "phone": {},
+    "termsOfService": {},
+    "privacyPolicy": {},
+    "color": "#00a6e5",
+    "variant": "solid",
+    "headerVariant": "glass",
+    "themeMode": "dark",
+    "fontFamily": "inter",
+    "radius": 4,
+    "feedbackEnabled": true,
+    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)"
+  },
+  "clientId": "617d7b21-a1f3-45a6-aeb3-8143d9fe074d",
+  "selector": "#webchat"
+});
+</script>
